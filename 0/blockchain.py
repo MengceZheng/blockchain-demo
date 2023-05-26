@@ -34,4 +34,4 @@ if __name__ == '__main__':
     add_a_block("this is block 1")
     add_a_block("this is block 2")
     add_a_block("this is block 3")
-    print(json.dumps(blockchain, ensure_ascii=False))
+    print(json.dumps(blockchain, ensure_ascii=False, indent=1))
