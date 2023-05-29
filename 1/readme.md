@@ -9,7 +9,7 @@
 运行方法：
 
 ```console
-~$ python3 blockchain.py
+~$ python blockchain.py
 ```
 
 如果正常，可得到类似如下的返回：
