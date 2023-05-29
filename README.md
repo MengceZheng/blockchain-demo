@@ -2,11 +2,11 @@
 
 ## 简介
 
-基于[cr4fun's blockchain开源教程](https://github.com/OpensourceBooks/blockchain)改进的简单区块链演示程序。
+基于[cr4fun's blockchain开源教程](https://github.com/OpensourceBooks/blockchain)以及 **ChatGPT** 改进的简单区块链演示程序。
 
 ## 说明
 
-程序使用Python语言，因水平有限，如有错漏，欢迎指出更正。
+程序使用 Python 语言，因水平有限，如有错漏，欢迎指出更正。
 
 ## 环境
 
