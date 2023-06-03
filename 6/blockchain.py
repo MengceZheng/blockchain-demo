@@ -42,9 +42,6 @@ def get_all_block():
     return jsonify(blocks)
 
 if __name__ == '__main__':
-    import hashlib
-    import json
-    import datetime
 
     class Block:
         def __init__(self, index, timestamp, data, previous_hash):
