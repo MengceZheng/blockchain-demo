@@ -74,7 +74,6 @@ def blocks_sync():
         port = node["port"]
         url_height = "http://{0}:{1}/blocks/height".format(ip, port)
         url_all = "http://{0}:{1}/blocks/all".format(ip, port)
-        print(url_all, url_height)
         try:
             r_height = requests.get(url_height)
             height = int(r_height.json())
