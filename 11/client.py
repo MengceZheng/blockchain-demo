@@ -17,6 +17,8 @@ def client(generate_keys, send_message, host, port, message, from_address, to_ad
     if generate_keys:
         public_key, private_key = generate_ECDSA_keys()
         click.echo("")
+        click.echo("User Host  : {0}".format(host))
+        click.echo("User Port  : {0}".format(port))
         click.echo("Address    : {0}".format(public_key))
         click.echo("Private key: {0}".format(private_key))
         click.echo("")
