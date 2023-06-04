@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta charset="utf-8">
+    <title>Blockchain</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+
+      h1 {
+        margin-bottom: 20px;
+      }
+
+      .block-link {
+        display: block;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Blockchain Browser</h1>
+
+    <div>
+      <h2>Functions</h2>
+    <a class="block-link" href="/blocks/all">View All Blocks</a>
+    <a class="block-link" href="/blocks/2">View Block at Index 2</a>
+    <a class="block-link" href="/blocks/1/3">View Blocks from Index 1 to 3</a>
+    <a class="block-link" href="/blocks/latest">View Latest Block</a>
+    <a class="block-link" href="/up/hello">Upload New Block with "hello"</a>
+    <a class="block-link" href="/blocks/height">View Blockchain Height</a>
+    <a class="block-link" href="/nodes">View All Nodes</a>
+    <a class="block-link" href="/nodes/add/localhost/8081">Add New Node '8081'</a>
+    <a class="block-link" href="/validate">Validate Blockchain</a>
+    <a class="block-link" href="/blocks/sync">Synchronize Blockchain</a>
+    <a class="block-link" href="/post">Upload New Block with ECDSA</a>
+    <a class="block-link" href="/find">Search for Block Logs</a>
+    </div>
+
+    <div>
+      <h2>Discovery</h2>
+    <form action="/" method="post">
+      <input type="text" name="address" placeholder="Enter address">
+      <button type="submit">Search</button>
+    </form>
+
+      <h3>Sent {{ out_logs|length }} logs</h3>
+      {% for block in out_logs %}
+        <p>Timestamp: {{ block["timestamp"] }}</p>
+        <p>To Address: {{ block["data"]["from_address"] }}</p>
+        <p>Hash Message Sent: {{ block["data"]["hash_message"] }}</p>
+      {% endfor %}
+
+      <h3>Received {{ in_logs|length }} logs</h3>
+      {% for block in in_logs %}
+        <p>Timestamp: {{ block["timestamp"] }}</p>
+        <p>From Address: {{ block["data"]["to_address"] }}</p>
+        <p>Hash Message Received: {{ block["data"]["hash_message"] }}</p>
+      {% endfor %}
+    </div>    
+  </body>
+</html>
