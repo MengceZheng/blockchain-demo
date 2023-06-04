@@ -19,9 +19,13 @@ def get_logs_by_address(address):
     for i in range(1, len(blocks)):
         block = blocks[i]
         data = block["data"]
-        if address == data["from_address"]:
+        if isinstance(data, str):
+            pass
+        elif address == data.get("from_address"):
             out_logs.append(block)
-        if address == data["to_address"]:
+        if isinstance(data, str):
+            pass
+        elif address == data.get("to_address"):
             in_logs.append(block)
     return out_logs, in_logs
 
