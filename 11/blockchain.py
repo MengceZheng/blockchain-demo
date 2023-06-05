@@ -15,7 +15,7 @@ app = Flask(__name__)
 def get_logs_by_address(address):
     out_logs = []
     in_logs = []
-    blocks = [block.__dict__ for block in blockchain.chain]
+    blocks = blockchain.chain
     for i in range(1, len(blocks)):
         block = blocks[i]
         data = block["data"]
@@ -88,7 +88,7 @@ def post():
                 "hash_message": hash_message
             }
             blockchain.add_block(block_data)
-            return jsonify(blockchain.get_chain_json())
+            return jsonify(blockchain.chain)
         else:
             return jsonify({"error": "invalid signature"})
     elif request.method == 'GET':
@@ -97,36 +97,33 @@ def post():
 @app.route('/up/<string:msg>', methods=['GET'])
 def up_block(msg):
     blockchain.add_block(msg)
-    return jsonify(blockchain.get_chain_json())
+    return jsonify(blockchain.chain)
 
 @app.route('/blocks/latest', methods=['GET'])
 def get_latest_block():
     latest_block = blockchain.chain[-1]
-    return jsonify(latest_block.__dict__)
+    return jsonify(latest_block)
 
 @app.route('/blocks/<int:index>', methods=['GET'])
 def get_block(index):
     if index < len(blockchain.chain):
         block = blockchain.chain[index]
-        return jsonify(block.__dict__)
+        return jsonify(block)
     else:
         return jsonify({"error": "noindex"})
 
 @app.route('/blocks/<int:from_index>/<int:to_index>', methods=['GET'])
 def get_block_from_to(from_index, to_index):
     if from_index < len(blockchain.chain) and to_index < len(blockchain.chain) and to_index >= from_index:
-        blocks = [block.__dict__ for block in blockchain.chain[from_index:to_index+1]]
+        blocks = [block for block in blockchain.chain[from_index:to_index+1]]
         return jsonify(blocks)
     else:
         return jsonify({"error": "noindex"})
 
 @app.route('/blocks/all', methods=['GET'])
 def get_all_block():
-    if isinstance(blockchain.chain[0], dict):
-        return jsonify(blockchain.chain)
-    else:
-        blocks = [block.__dict__ for block in blockchain.chain]
-        return jsonify(blocks)
+    blocks = blockchain.chain
+    return jsonify(blocks)
 
 @app.route('/blocks/height', methods=['GET'])
 def get_block_height():
@@ -172,7 +169,7 @@ def validate(blocks):
 
 @app.route('/validate',methods=['GET'])
 def blocks_validate():
-    blocks = [block.__dict__ for block in blockchain.chain]
+    blocks = blockchain.chain
     if validate(blocks):
         return jsonify("Validation Success")
     else:
@@ -194,11 +191,13 @@ def blocks_sync():
                 blocks = r_blocks_all.json()
                 if validate(blocks):
                     blockchain.chain = [block for block in blocks]
-                return jsonify("Synchronized")
+                    return jsonify("Synchronized")
+                else:
+                    return jsonify("Validation Failure")
             else:
                 return jsonify("Unsynchronized")
         except:
-            pass
+            return jsonify({"error": "noconnection"})
     return jsonify("no nodes")
 
 
@@ -216,7 +215,16 @@ if __name__ == '__main__':
             sha = hashlib.sha256()
             sha.update(f"{self.index}{self.timestamp}{self.data}{self.previous_hash}".encode("utf-8"))
             return sha.hexdigest()
-
+        
+        def to_dict(self):
+            return {
+                "index": self.index,
+                "timestamp": self.timestamp,
+                "data": self.data,
+                "previous_hash": self.previous_hash,
+                "hash": self.hash
+            }
+        
     class Blockchain:
         def __init__(self):
             self.chain = []
@@ -227,19 +235,15 @@ if __name__ == '__main__':
             timestamp = datetime.datetime(1949, 10, 1, 15, 0, 0)
             data = "Genesis Block"
             previous_hash = "0"
-            self.chain.append(Block(index, timestamp, data, previous_hash))
+            self.chain.append(Block(index, timestamp, data, previous_hash).to_dict())
 
         def add_block(self, data):
             previous_block = self.chain[-1]
-            index = previous_block.index + 1
+            index = previous_block["index"] + 1
             timestamp = datetime.datetime.now()
-            previous_hash = previous_block.hash
-            new_block = Block(index, timestamp, data, previous_hash)
+            previous_hash = previous_block["hash"]
+            new_block = Block(index, timestamp, data, previous_hash).to_dict()
             self.chain.append(new_block)
-
-        def get_chain_json(self):
-            chain_json = [block.__dict__ for block in self.chain]
-            return chain_json
 
     # 创建一个区块链实例
     blockchain = Blockchain()
