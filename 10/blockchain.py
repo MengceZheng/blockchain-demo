@@ -192,11 +192,13 @@ def blocks_sync():
                 blocks = r_blocks_all.json()
                 if validate(blocks):
                     blockchain.chain = [block for block in blocks]
-                return jsonify("Synchronized")
+                    return jsonify("Synchronized")
+                else:
+                    return jsonify("Validation Failure")
             else:
                 return jsonify("Unsynchronized")
         except:
-            pass
+            return jsonify("error")
     return jsonify("no nodes")
 
 
