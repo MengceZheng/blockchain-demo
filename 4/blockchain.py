@@ -24,7 +24,7 @@ class Blockchain:
     def create_genesis_block(self):
         index = 0
         timestamp = datetime.datetime.now()
-        data = "This is the genesis block"
+        data = "Genesis Block"
         previous_hash = "0"
         self.chain.append(Block(index, timestamp, data, previous_hash))
 
@@ -65,9 +65,9 @@ if __name__ == '__main__':
     blockchain = Blockchain()
 
     # 添加一些区块
-    blockchain.add_block("This is block 1")
-    blockchain.add_block("This is block 2")
-    blockchain.add_block("This is block 3")
+    # blockchain.add_block("This is block 1")
+    # blockchain.add_block("This is block 2")
+    # blockchain.add_block("This is block 3")
     
     # 设置 JSON 输出选项
     app.config['JSON_AS_ASCII']=False

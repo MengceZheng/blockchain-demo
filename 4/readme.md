@@ -10,38 +10,45 @@
 [
   {
     "Index": 0,
-    "Timestamp": "2023-05-29 19:42:00.535673",
-    "Data": "This is the genesis block",
+    "Timestamp": "2023-06-06 10:56:42.001169",
+    "Data": "Genesis Block",
     "Previous Hash": "0",
-    "Hash": "9e22e392d65a215441b8d566e1b2de1c3cd51bf7cebee3b781b2f1a9d6134cf2"
+    "Hash": "5b5ea6e89bcc97f651c53a24be2273ba605b1bff2c6b786b3c6900542889a0fe"
   },
   {
     "Index": 1,
-    "Timestamp": "2023-05-29 19:42:00.535673",
-    "Data": "This is block 1",
-    "Previous Hash": "9e22e392d65a215441b8d566e1b2de1c3cd51bf7cebee3b781b2f1a9d6134cf2",
-    "Hash": "2b65633997678a1e7b179b4e1adada105f7b885532ea5b2d01d43a6fa98dfc79"
+    "Timestamp": "2023-06-06 11:01:48.990767",
+    "Data": "hello",
+    "Previous Hash": "5b5ea6e89bcc97f651c53a24be2273ba605b1bff2c6b786b3c6900542889a0fe",
+    "Hash": "61f5bbd2705c260bd8214b00a5c2fd5f74befadd922dcdc090b40e1fca9202f1"
+  }
+]
+```
+
+再通过访问<http://localhost:8080/up/hello>在浏览器中再次查看*hello*上链后的区块链信息：
+
+```json
+[
+  {
+    "Index": 0,
+    "Timestamp": "2023-06-06 10:56:42.001169",
+    "Data": "Genesis Block",
+    "Previous Hash": "0",
+    "Hash": "5b5ea6e89bcc97f651c53a24be2273ba605b1bff2c6b786b3c6900542889a0fe"
+  },
+  {
+    "Index": 1,
+    "Timestamp": "2023-06-06 11:01:48.990767",
+    "Data": "hello",
+    "Previous Hash": "5b5ea6e89bcc97f651c53a24be2273ba605b1bff2c6b786b3c6900542889a0fe",
+    "Hash": "61f5bbd2705c260bd8214b00a5c2fd5f74befadd922dcdc090b40e1fca9202f1"
   },
   {
     "Index": 2,
-    "Timestamp": "2023-05-29 19:42:00.535673",
-    "Data": "This is block 2",
-    "Previous Hash": "2b65633997678a1e7b179b4e1adada105f7b885532ea5b2d01d43a6fa98dfc79",
-    "Hash": "788865acf8dc529e1a7f3cd7e9754ff8ed237ff0c2ef9124cc0aea57b72b624c"
-  },
-  {
-    "Index": 3,
-    "Timestamp": "2023-05-29 19:42:00.535673",
-    "Data": "This is block 3",
-    "Previous Hash": "788865acf8dc529e1a7f3cd7e9754ff8ed237ff0c2ef9124cc0aea57b72b624c",
-    "Hash": "384ed86f29f16b508eaf7ece6a4dc1ca29e1158d0f93d2033a7cf01c30e70454"
-  },
-  {
-    "Index": 4,
-    "Timestamp": "2023-05-29 19:45:28.159443",
+    "Timestamp": "2023-06-06 11:02:40.348882",
     "Data": "hello",
-    "Previous Hash": "384ed86f29f16b508eaf7ece6a4dc1ca29e1158d0f93d2033a7cf01c30e70454",
-    "Hash": "e0c30506ae5cfa0bd6ea9a8d4bc46c10e878582fafdf16cdf63389e00211cb95"
+    "Previous Hash": "61f5bbd2705c260bd8214b00a5c2fd5f74befadd922dcdc090b40e1fca9202f1",
+    "Hash": "009dcf07cce57b90d0a9c6a2d1f4f8f5891a14e6f3b606c80e2f36de1d7ccdfe"
   }
 ]
 ```
