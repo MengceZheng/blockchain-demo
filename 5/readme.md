@@ -2,42 +2,41 @@
 
 对代码进行以下修改和优化：
 
-- 将`blockchain`对象的实例化和添加初始区块的操作移至`if __name__ == '__main__':`的条件下，确保在直接运行脚本时才执行代码。
-- 优化获取区块链信息的方法，将`get_chain_json()`方法改为返回字典形式的区块信息列表，以便在路由处理函数中进行 JSON 序列化。
-- 在路由处理函数中，使用`block.__dict__`将区块对象转换为字典形式，以便进行 JSON 序列化。
-- 修改路由处理函数的返回值，使用`jsonify`函数将数据转换为 JSON 格式进行返回输出。
+- 将 `blockchain` 对象的实例化和添加初始区块的操作移至 `if __name__ == '__main__':` 的条件下，确保在直接运行脚本时才执行代码。
+- 优化获取区块链信息的方法，区块提供 `to_dict` 方法，返回字典形式的区块信息列表，以便在路由处理函数中进行 JSON 序列化。
+- 修改路由处理函数的返回值，使用 `jsonify` 函数将数据转换为 JSON 格式进行返回输出。
 
-访问全部区块时的地址为<http://localhost:8080/blocks/all>：
+三条信息上链后，访问全部区块时的地址为<http://localhost:8080/blocks/all>：
 
 ```json
 [
   {
-    "index": 0,
-    "timestamp": "Mon, 29 May 2023 20:18:02 GMT",
-    "data": "Genesis Block",
-    "previous_hash": "0",
-    "hash": "20591d8361f460eaef11a0396d3eef1be5f674e8573ff7069dc1c88a6c4e6c37"
+    "Index": 0,
+    "Timestamp": "Tue, 06 Jun 2023 20:52:26 GMT",
+    "Data": "Genesis Block",
+    "PreHash": "0",
+    "Hash": "5af830574cabab6ef14e01857783e3ac30e810379a26c16833e72fe2001ffbed"
   },
   {
-    "index": 1,
-    "timestamp": "Mon, 29 May 2023 20:18:02 GMT",
-    "data": "2020900103",
-    "previous_hash": "20591d8361f460eaef11a0396d3eef1be5f674e8573ff7069dc1c88a6c4e6c37",
-    "hash": "17c841a355e8f238dce0de891a4ef40803eb0a1b5547d4e6d42490a233b94fa0"
+    "Index": 1,
+    "Timestamp": "Tue, 06 Jun 2023 20:52:48 GMT",
+    "Data": "2020900103",
+    "PreHash": "5af830574cabab6ef14e01857783e3ac30e810379a26c16833e72fe2001ffbed",
+    "Hash": "bc0f6e96b35bfaf9bf638b7c2cab37e7fa6f5e5ad07aa7902237e6ce95d09e46"
   },
   {
-    "index": 2,
-    "timestamp": "Mon, 29 May 2023 20:18:02 GMT",
-    "data": "郑梦策",
-    "previous_hash": "17c841a355e8f238dce0de891a4ef40803eb0a1b5547d4e6d42490a233b94fa0",
-    "hash": "62b7e86713c23067b97af17fb60b09bf5afc67d00fd459a12045d39dc9830362"
+    "Index": 2,
+    "Timestamp": "Tue, 06 Jun 2023 20:52:54 GMT",
+    "Data": "郑梦策",
+    "PreHash": "bc0f6e96b35bfaf9bf638b7c2cab37e7fa6f5e5ad07aa7902237e6ce95d09e46",
+    "Hash": "2eb14450b9d1c92bb023b92630e68758c79c40377d8d1a53571b76f6987a99f6"
   },
   {
-    "index": 3,
-    "timestamp": "Mon, 29 May 2023 20:18:02 GMT",
-    "data": "Well done!",
-    "previous_hash": "62b7e86713c23067b97af17fb60b09bf5afc67d00fd459a12045d39dc9830362",
-    "hash": "400845377f61d2e86210a4f96f326c00fb4d925061953cde6cc774caf443c40a"
+    "Index": 3,
+    "Timestamp": "Tue, 06 Jun 2023 20:53:14 GMT",
+    "Data": "2023-06-06",
+    "PreHash": "2eb14450b9d1c92bb023b92630e68758c79c40377d8d1a53571b76f6987a99f6",
+    "Hash": "d687c3e2245a7c56ca1697e9c52a40a19e1d43a6487b8c0b623be457eb5f85ea"
   }
 ]
 ```
@@ -46,11 +45,11 @@
 
 ```json
 {
-  "index": 3,
-  "timestamp": "Mon, 29 May 2023 20:18:02 GMT",
-  "data": "Well done!",
-  "previous_hash": "62b7e86713c23067b97af17fb60b09bf5afc67d00fd459a12045d39dc9830362",
-  "hash": "400845377f61d2e86210a4f96f326c00fb4d925061953cde6cc774caf443c40a"
+  "Index": 3,
+  "Timestamp": "Tue, 06 Jun 2023 20:53:14 GMT",
+  "Data": "2023-06-06",
+  "PreHash": "2eb14450b9d1c92bb023b92630e68758c79c40377d8d1a53571b76f6987a99f6",
+  "Hash": "d687c3e2245a7c56ca1697e9c52a40a19e1d43a6487b8c0b623be457eb5f85ea"
 }
 ```
 
@@ -59,25 +58,25 @@
 ```json
 [
   {
-    "index": 1,
-    "timestamp": "Mon, 29 May 2023 20:18:02 GMT",
-    "data": "2020900103",
-    "previous_hash": "20591d8361f460eaef11a0396d3eef1be5f674e8573ff7069dc1c88a6c4e6c37",
-    "hash": "17c841a355e8f238dce0de891a4ef40803eb0a1b5547d4e6d42490a233b94fa0"
+    "Index": 1,
+    "Timestamp": "Tue, 06 Jun 2023 20:52:48 GMT",
+    "Data": "2020900103",
+    "PreHash": "5af830574cabab6ef14e01857783e3ac30e810379a26c16833e72fe2001ffbed",
+    "Hash": "bc0f6e96b35bfaf9bf638b7c2cab37e7fa6f5e5ad07aa7902237e6ce95d09e46"
   },
   {
-    "index": 2,
-    "timestamp": "Mon, 29 May 2023 20:18:02 GMT",
-    "data": "郑梦策",
-    "previous_hash": "17c841a355e8f238dce0de891a4ef40803eb0a1b5547d4e6d42490a233b94fa0",
-    "hash": "62b7e86713c23067b97af17fb60b09bf5afc67d00fd459a12045d39dc9830362"
+    "Index": 2,
+    "Timestamp": "Tue, 06 Jun 2023 20:52:54 GMT",
+    "Data": "郑梦策",
+    "PreHash": "bc0f6e96b35bfaf9bf638b7c2cab37e7fa6f5e5ad07aa7902237e6ce95d09e46",
+    "Hash": "2eb14450b9d1c92bb023b92630e68758c79c40377d8d1a53571b76f6987a99f6"
   },
   {
-    "index": 3,
-    "timestamp": "Mon, 29 May 2023 20:18:02 GMT",
-    "data": "Well done!",
-    "previous_hash": "62b7e86713c23067b97af17fb60b09bf5afc67d00fd459a12045d39dc9830362",
-    "hash": "400845377f61d2e86210a4f96f326c00fb4d925061953cde6cc774caf443c40a"
+    "Index": 3,
+    "Timestamp": "Tue, 06 Jun 2023 20:53:14 GMT",
+    "Data": "2023-06-06",
+    "PreHash": "2eb14450b9d1c92bb023b92630e68758c79c40377d8d1a53571b76f6987a99f6",
+    "Hash": "d687c3e2245a7c56ca1697e9c52a40a19e1d43a6487b8c0b623be457eb5f85ea"
   }
 ]
 ```
@@ -86,10 +85,10 @@
 
 ```json
 {
-  "index": 2,
-  "timestamp": "Mon, 29 May 2023 20:18:02 GMT",
-  "data": "郑梦策",
-  "previous_hash": "17c841a355e8f238dce0de891a4ef40803eb0a1b5547d4e6d42490a233b94fa0",
-  "hash": "62b7e86713c23067b97af17fb60b09bf5afc67d00fd459a12045d39dc9830362"
+  "Index": 2,
+  "Timestamp": "Tue, 06 Jun 2023 20:52:54 GMT",
+  "Data": "郑梦策",
+  "PreHash": "bc0f6e96b35bfaf9bf638b7c2cab37e7fa6f5e5ad07aa7902237e6ce95d09e46",
+  "Hash": "2eb14450b9d1c92bb023b92630e68758c79c40377d8d1a53571b76f6987a99f6"
 }
 ```
