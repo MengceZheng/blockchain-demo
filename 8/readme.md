@@ -29,18 +29,18 @@
 ```json
 [
   {
-    "index": 0,
-    "timestamp": "Sat, 01 Oct 1949 15:00:00 GMT",
-    "data": "Genesis Block",
-    "previous_hash": "0",
-    "hash": "2c3776b2af0377c9c683852a16e6b1791523b919f48e2d2ac213f024a93693d9"
+    "Data": "Genesis Block",
+    "Hash": "2c3776b2af0377c9c683852a16e6b1791523b919f48e2d2ac213f024a93693d9",
+    "Index": 0,
+    "PreHash": "0",
+    "Timestamp": "Sat, 01 Oct 1949 15:00:00 GMT"
   },
   {
-    "index": 1,
-    "timestamp": "Sat, 03 Jun 2023 19:34:23 GMT",
-    "data": "hello",
-    "previous_hash": "2c3776b2af0377c9c683852a16e6b1791523b919f48e2d2ac213f024a93693d9",
-    "hash": "c81ee42656561ff6d0b98e81d623747f48b4f8885ac82608b4680d242422cace"
+    "Data": "hello",
+    "Hash": "55103f53d2cbfe1fdc4ead1a44e331177a403e3a4393d6bf0548d3879c856cac",
+    "Index": 1,
+    "PreHash": "2c3776b2af0377c9c683852a16e6b1791523b919f48e2d2ac213f024a93693d9",
+    "Timestamp": "Wed, 07 Jun 2023 09:28:54 GMT"
   }
 ]
 ```
@@ -50,11 +50,11 @@
 ```json
 [
   {
-    "index": 0,
-    "timestamp": "Sat, 01 Oct 1949 15:00:00 GMT",
-    "data": "Genesis Block",
-    "previous_hash": "0",
-    "hash": "2c3776b2af0377c9c683852a16e6b1791523b919f48e2d2ac213f024a93693d9"
+    "Data": "Genesis Block",
+    "Hash": "2c3776b2af0377c9c683852a16e6b1791523b919f48e2d2ac213f024a93693d9",
+    "Index": 0,
+    "PreHash": "0",
+    "Timestamp": "Sat, 01 Oct 1949 15:00:00 GMT"
   }
 ]
 ```
@@ -70,18 +70,18 @@
 ```json
 [
   {
-    "index": 0,
-    "timestamp": "Sat, 01 Oct 1949 15:00:00 GMT",
-    "data": "Genesis Block",
-    "previous_hash": "0",
-    "hash": "2c3776b2af0377c9c683852a16e6b1791523b919f48e2d2ac213f024a93693d9"
+    "Data": "Genesis Block",
+    "Hash": "2c3776b2af0377c9c683852a16e6b1791523b919f48e2d2ac213f024a93693d9",
+    "Index": 0,
+    "PreHash": "0",
+    "Timestamp": "Sat, 01 Oct 1949 15:00:00 GMT"
   },
   {
-    "index": 1,
-    "timestamp": "Sat, 03 Jun 2023 19:34:23 GMT",
-    "data": "hello",
-    "previous_hash": "2c3776b2af0377c9c683852a16e6b1791523b919f48e2d2ac213f024a93693d9",
-    "hash": "c81ee42656561ff6d0b98e81d623747f48b4f8885ac82608b4680d242422cace"
+    "Data": "hello",
+    "Hash": "55103f53d2cbfe1fdc4ead1a44e331177a403e3a4393d6bf0548d3879c856cac",
+    "Index": 1,
+    "PreHash": "2c3776b2af0377c9c683852a16e6b1791523b919f48e2d2ac213f024a93693d9",
+    "Timestamp": "Wed, 07 Jun 2023 09:28:54 GMT"
   }
 ]
 ```
