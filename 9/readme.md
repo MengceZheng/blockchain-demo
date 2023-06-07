@@ -38,24 +38,24 @@ python client.py -s -m ECDSA数字签名 -f 0HgX/z9doySYXRP7CB8DAI8nwnYGEgOjEHNo
 ```json
 [
   {
-    "index": 0,
-    "timestamp": "Sat, 01 Oct 1949 15:00:00 GMT",
-    "data": "Genesis Block",
-    "previous_hash": "0",
-    "hash": "2c3776b2af0377c9c683852a16e6b1791523b919f48e2d2ac213f024a93693d9"
+    "Data": "Genesis Block",
+    "Hash": "2c3776b2af0377c9c683852a16e6b1791523b919f48e2d2ac213f024a93693d9",
+    "Index": 0,
+    "PreHash": "0",
+    "Timestamp": "Sat, 01 Oct 1949 15:00:00 GMT"
   },
   {
-    "index": 1,
-    "timestamp": "Sat, 03 Jun 2023 20:59:16 GMT",
-    "data": {
+    "Data": {
       "from_address": "0HgX/z9doySYXRP7CB8DAI8nwnYGEgOjEHNoY7I71v+jXovuiIIMiAYPsrew+32mpb30h5AgpR40qV5w7v9BXw==",
-      "to_address": "0HgX/z9doySYXRP7CB8DAI8nwnYGEgOjEHNoY7I71v+jXovuiIIMiAYPsrew+32mpb30h5AgpR40qV5w7v9BXw==",
-      "message": "ECDSA数字签名",
-      "signature": "6flsF55K3CMiiIE0z/uLsvi/AnOSMb4SggrPjU213Puy2PN23fYrIxgyl12KGvTkqi55D/vkXY6t1q+V9UWB1A==",
-      "memo": "memo_test"
+      "memo": "memo_test",
+      "message": "ECDSA\u6570\u5b57\u7b7e\u540d",
+      "signature": "/F9OoWMIEYK5fY2wwsrxWhlBrhVEUgu8ekgDxNepeTgQPVfeAYAOfODtChDrhYwGIJM8NxBOy44LgwZEzuVreg==",
+      "to_address": "0HgX/z9doySYXRP7CB8DAI8nwnYGEgOjEHNoY7I71v+jXovuiIIMiAYPsrew+32mpb30h5AgpR40qV5w7v9BXw=="
     },
-    "previous_hash": "2c3776b2af0377c9c683852a16e6b1791523b919f48e2d2ac213f024a93693d9",
-    "hash": "fac16f5fed277cb07eb8bab6553730d1f06b2c89d8b83ffa60b129039279da49"
+    "Hash": "b312330db54b13c980ff83b948f3c1bfa24a8f25c06fdaff0294ec051fd13d8a",
+    "Index": 1,
+    "PreHash": "2c3776b2af0377c9c683852a16e6b1791523b919f48e2d2ac213f024a93693d9",
+    "Timestamp": "Wed, 07 Jun 2023 10:00:08 GMT"
   }
 ]
 ```
@@ -65,24 +65,24 @@ python client.py -s -m ECDSA数字签名 -f 0HgX/z9doySYXRP7CB8DAI8nwnYGEgOjEHNo
 ```json
 [
   {
-    "index": 0,
-    "timestamp": "Sat, 01 Oct 1949 15:00:00 GMT",
-    "data": "Genesis Block",
-    "previous_hash": "0",
-    "hash": "2c3776b2af0377c9c683852a16e6b1791523b919f48e2d2ac213f024a93693d9"
+    "Data": "Genesis Block",
+    "Hash": "2c3776b2af0377c9c683852a16e6b1791523b919f48e2d2ac213f024a93693d9",
+    "Index": 0,
+    "PreHash": "0",
+    "Timestamp": "Sat, 01 Oct 1949 15:00:00 GMT"
   },
   {
-    "index": 1,
-    "timestamp": "Sat, 03 Jun 2023 20:59:16 GMT",
-    "data": {
+    "Data": {
       "from_address": "0HgX/z9doySYXRP7CB8DAI8nwnYGEgOjEHNoY7I71v+jXovuiIIMiAYPsrew+32mpb30h5AgpR40qV5w7v9BXw==",
-      "to_address": "0HgX/z9doySYXRP7CB8DAI8nwnYGEgOjEHNoY7I71v+jXovuiIIMiAYPsrew+32mpb30h5AgpR40qV5w7v9BXw==",
-      "message": "ECDSA数字签名",
-      "signature": "6flsF55K3CMiiIE0z/uLsvi/AnOSMb4SggrPjU213Puy2PN23fYrIxgyl12KGvTkqi55D/vkXY6t1q+V9UWB1A==",
-      "memo": "memo_test"
+      "memo": "memo_test",
+      "message": "ECDSA\u6570\u5b57\u7b7e\u540d",
+      "signature": "/F9OoWMIEYK5fY2wwsrxWhlBrhVEUgu8ekgDxNepeTgQPVfeAYAOfODtChDrhYwGIJM8NxBOy44LgwZEzuVreg==",
+      "to_address": "0HgX/z9doySYXRP7CB8DAI8nwnYGEgOjEHNoY7I71v+jXovuiIIMiAYPsrew+32mpb30h5AgpR40qV5w7v9BXw=="
     },
-    "previous_hash": "2c3776b2af0377c9c683852a16e6b1791523b919f48e2d2ac213f024a93693d9",
-    "hash": "fac16f5fed277cb07eb8bab6553730d1f06b2c89d8b83ffa60b129039279da49"
+    "Hash": "b312330db54b13c980ff83b948f3c1bfa24a8f25c06fdaff0294ec051fd13d8a",
+    "Index": 1,
+    "PreHash": "2c3776b2af0377c9c683852a16e6b1791523b919f48e2d2ac213f024a93693d9",
+    "Timestamp": "Wed, 07 Jun 2023 10:00:08 GMT"
   }
 ]
 ```
