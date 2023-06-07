@@ -48,16 +48,16 @@
 
       <h3>Sent {{ out_logs|length }} logs</h3>
       {% for block in out_logs %}
-        <p>Timestamp: {{ block["timestamp"] }}</p>
-        <p>To Address: {{ block["data"]["from_address"] }}</p>
-        <p>Message Sent: {{ block["data"]["message"] }}</p>
+        <p>Timestamp: {{ block["Timestamp"] }}</p>
+        <p>To Address: {{ block["Data"]["from_address"] }}</p>
+        <p>Message Sent: {{ block["Data"]["message"] }}</p>
       {% endfor %}
 
       <h3>Received {{ in_logs|length }} logs</h3>
       {% for block in in_logs %}
-        <p>Timestamp: {{ block["timestamp"] }}</p>
-        <p>From Address: {{ block["data"]["to_address"] }}</p>
-        <p>Received Message: {{ block["data"]["message"] }}</p>
+        <p>Timestamp: {{ block["Timestamp"] }}</p>
+        <p>From Address: {{ block["Data"]["to_address"] }}</p>
+        <p>Received Message: {{ block["Data"]["message"] }}</p>
       {% endfor %}
     </div>    
   </body>
