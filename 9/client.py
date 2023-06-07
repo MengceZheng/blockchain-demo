@@ -21,6 +21,7 @@ def client(generate_keys, send_message, m, f, t, k, memo):
     elif send_message:
         if m and f and t and k:
             response = send_transaction(f, t, m, k, memo)
+            click.echo("")
             click.echo(response)
         else:
             click.echo("Missing required arguments.")

@@ -30,7 +30,7 @@ Private key: 367d80eb91f4c2a07b984009f93bb7d9020dbb056e6463886b666dec13d3915d
 签名消息上链使用方式如下：
 
 ```console
-client.py -s -m ECDSA数字签名 -f 0HgX/z9doySYXRP7CB8DAI8nwnYGEgOjEHNoY7I71v+jXovuiIIMiAYPsrew+32mpb30h5AgpR40qV5w7v9BXw== -t 0HgX/z9doySYXRP7CB8DAI8nwnYGEgOjEHNoY7I71v+jXovuiIIMiAYPsrew+32mpb30h5AgpR40qV5w7v9BXw== -k 367d80eb91f4c2a07b984009f93bb7d9020dbb056e6463886b666dec13d3915d -o memo_test
+python client.py -s -m ECDSA数字签名 -f 0HgX/z9doySYXRP7CB8DAI8nwnYGEgOjEHNoY7I71v+jXovuiIIMiAYPsrew+32mpb30h5AgpR40qV5w7v9BXw== -t 0HgX/z9doySYXRP7CB8DAI8nwnYGEgOjEHNoY7I71v+jXovuiIIMiAYPsrew+32mpb30h5AgpR40qV5w7v9BXw== -k 367d80eb91f4c2a07b984009f93bb7d9020dbb056e6463886b666dec13d3915d -o memo_test
 ```
 
 回显如下：
