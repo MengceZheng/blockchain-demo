@@ -47,6 +47,8 @@ Options:
 ]
 ```
 
+注意：浏览器方式消息上链的数据留存在本地，因此需要其它节点同步。
+
 根据查询相关区块信息功能，见<http://localhost:8080/find>，如输入地址`0HgX/z9doySYXRP7CB8DAI8nwnYGEgOjEHNoY7I71v+jXovuiIIMiAYPsrew+32mpb30h5AgpR40qV5w7v9BXw==`后回显：
 
 ```json
