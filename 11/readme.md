@@ -101,7 +101,7 @@ python client.py -s --host localhost --port 8081 -fa 1SRSdJL2FegT2IaKBqNIV5YIL+5
 现在由 8081 节点为 8080 节点上传一条消息：
 
 ```console
-python client.py -s --host localhost --port 8080 -fa 1SRSdJL2FegT2IaKBqNIV5YIL+5M3FWgzPnuB49Ns6xwyvba4GhXgcS9NpSmfcuGUBtXxDsuJP24LNpKLurinw== -ta 85Z2GeaYHKLKadDzQCWqKGpxAy4U6y9Kt6UQvSabWIaXVR3OV6KcBE1R/uN3ODj6OE8vZaYKgZgjOOy5kb+ciQ== -k 8a1eda6323a2d4dbb12742032b684a435b25080b0dac1722b47f0e43700c0260 -m 8080to8081 -o first
+python client.py -s --host localhost --port 8080 -fa 85Z2GeaYHKLKadDzQCWqKGpxAy4U6y9Kt6UQvSabWIaXVR3OV6KcBE1R/uN3ODj6OE8vZaYKgZgjOOy5kb+ciQ== -ta 1SRSdJL2FegT2IaKBqNIV5YIL+5M3FWgzPnuB49Ns6xwyvba4GhXgcS9NpSmfcuGUBtXxDsuJP24LNpKLurinw== -k 2ce51862f5648c3c7f8d2b890bba1b30b6e00db25e8caaceff93ae105ae9b837 -m 8081to8080 -o second
 ```
 
 ```json
